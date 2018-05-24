@@ -2,8 +2,8 @@
 Final exam, problem 3.
 
 Authors: David Mutchler, Dave Fisher, Matt Boutell, their colleagues,
-         and PUT_YOUR_NAME_HERE.
-"""  # TODO: 1. PUT YOUR NAME IN THE ABOVE LINE.
+         and Lilin Chen.
+"""  # DONE: 1. PUT YOUR NAME IN THE ABOVE LINE.
 
 
 def main():
@@ -75,7 +75,7 @@ And this one for n=14:
     :type n: int
     """
     # ------------------------------------------------------------------
-    # TODO: Implement and test this function.
+    # DONE: Implement and test this function.
     #          Some tests are already written for you (above).
     ####################################################################
     # IMPORTANT: In solving this problem,
@@ -87,6 +87,32 @@ And this one for n=14:
     #   print Xs for the spaces until you figure out where the problem is
     #   (and then change the Xs back to spaces).
     # ------------------------------------------------------------------
+
+    ori_sequence = []
+    sequence = []
+
+    for k in range(n):
+        for j in range(n, 0, -1):
+            if j > k:
+                sequence = sequence + [' ']
+        for p in range(1, k + 2):
+            if p < 10:
+                sequence = sequence + [p]
+            if p >= 10:
+                sequence = sequence + [p % 10]
+        sequence = sequence + [' ']
+        for l in range(k + 2):
+            sequence = sequence + ['*']
+        sequence = sequence + [' ']
+        for u in range(n - k, 0, -1):
+            if u >= 10:
+                sequence = sequence + [u % 10]
+            else:
+                sequence = sequence + [u]
+        for y in range(len(sequence)):
+            print(sequence[y], end = '')
+        print()
+        sequence = ori_sequence
 
 
 # ----------------------------------------------------------------------
