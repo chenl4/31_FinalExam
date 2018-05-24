@@ -172,11 +172,19 @@ def problem1b(numbers):
       :type numbers:  [int]
     """
     # -------------------------------------------------------------------------
-    # TODO: 3. Implement and test this function.
+    # DONE: 3. Implement and test this function.
     #          Tests have been written for you (above).
     # -------------------------------------------------------------------------
 
-    
+    sum = 0
+    sequence = []
+
+    for k in range(len(numbers)//3, len(numbers) // 3 + (len(numbers) // 3)):
+        sequence = sequence + [numbers[k]]
+    for j in range(len(sequence)):
+        sum = sum + sequence[j]
+
+    return sum
 
 
 ###############################################################################
